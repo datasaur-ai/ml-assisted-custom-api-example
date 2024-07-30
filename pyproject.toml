@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ml-assisted-custom-api-example"
+description = "Example Python REST API Server Implementation for Datasaur ML-Assisted Labeling Custom API."
+authors = ["Datasaur.ai"]
+license = "MIT"
+version = "0.1.0"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.1"
+textblob = "^0.18.0.post0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
