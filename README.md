@@ -71,7 +71,6 @@ Request:
   "documents": [
     {
       "id": "document_id",
-      "name": "document_name",
       "sentences": [
         {
           "id": 0,
