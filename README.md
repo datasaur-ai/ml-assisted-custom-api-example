@@ -75,7 +75,7 @@ Request:
       "sentences": [
         {
           "id": 0,
-          "text": "John Doe works at Abcd Corp."
+          "text": "John works at Abcd Corp."
         }
       ]
     }
@@ -103,8 +103,8 @@ Response:
             },
             {
               "label": "ORG",
-              "start_char": 18,
-              "end_char": 28,
+              "start_char": 14,
+              "end_char": 24,
               "layer": 0
             }
           ]
