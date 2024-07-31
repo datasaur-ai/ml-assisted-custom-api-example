@@ -30,7 +30,6 @@ class SpanBasedInputSentence(BaseModel):
 
 class SpanBasedInputDocument(BaseModel):
     id: Annotated[str, "Document id"]
-    name: Annotated[str, "Document file name"]
     sentences: list[SpanBasedInputSentence]
 
 
