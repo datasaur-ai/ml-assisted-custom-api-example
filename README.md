@@ -16,7 +16,13 @@ Example Python REST API Server Implementation for Datasaur ML-Assisted Labeling 
    poetry install
    ```
 
-2. Run service
+2. Download spacy model
+
+   ```sh
+   spacy download en_core_web_sm
+   ```
+
+3. Run service
 
    ```sh
    fastapi run main.py
@@ -50,4 +56,61 @@ Response:
     "label": "Positive"
   }
 ]
+```
+
+### POST /span-based
+
+Accepts a project with documents and sentences, and returns entities recognized in the text.
+
+Request:
+
+```json
+{
+  "id": "project_id",
+  "name": "project_name",
+  "documents": [
+    {
+      "id": "document_id",
+      "name": "document_name",
+      "sentences": [
+        {
+          "id": 0,
+          "text": "John Doe works at Abcd Corp."
+        }
+      ]
+    }
+  ]
+}
+```
+
+Response:
+
+```json
+{
+  "id": "project_id",
+  "documents": [
+    {
+      "id": "document_id",
+      "labels": [
+        {
+          "id": 0,
+          "entities": [
+            {
+              "label": "PERSON",
+              "start_char": 0,
+              "end_char": 4,
+              "layer": 0
+            },
+            {
+              "label": "ORG",
+              "start_char": 18,
+              "end_char": 28,
+              "layer": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 ```
